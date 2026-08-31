@@ -1,0 +1,586 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+body {
+
+    background: #0b0b0f;
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================
+   MAIN EXPERIENCE
+===================================== */
+
+#experience {
+
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+}
+
+
+/* =====================================
+   GENERIC SCREEN
+===================================== */
+
+.screen {
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.screen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =====================================
+   STORY
+===================================== */
+
+#storyScreen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #17171d,
+            #08080b
+        );
+
+}
+
+
+.content {
+
+    width: 90%;
+
+    max-width: 650px;
+
+    text-align: center;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+
+.content.fade-out {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+}
+
+
+#title {
+
+    margin: 0 0 20px;
+
+    font-size:
+        clamp(2.5rem, 8vw, 4.5rem);
+
+    font-weight: normal;
+
+}
+
+
+#message {
+
+    margin: 0;
+
+    font-size:
+        clamp(1.1rem, 3vw, 1.4rem);
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+#buttons {
+
+    margin-top: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+button {
+
+    padding: 13px 30px;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,0.4);
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+}
+
+
+button:hover {
+
+    background:
+        rgba(255,255,255,0.1);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+#backButton {
+
+    opacity: 0.5;
+
+}
+
+
+#backButton:hover {
+
+    opacity: 1;
+
+}
+
+
+/* =====================================
+   MUSIC SCREEN
+===================================== */
+
+#musicScreen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #18151b,
+            #08080b
+        );
+
+}
+
+
+.musicContent {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    text-align: center;
+
+}
+
+
+.musicContent h2 {
+
+    margin-bottom: 15px;
+
+    font-size:
+        clamp(1.8rem, 5vw, 2.5rem);
+
+    font-weight: normal;
+
+}
+
+
+.musicContent p {
+
+    line-height: 1.8;
+
+    opacity: 0.7;
+
+}
+
+
+#spotifyPlayer {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 35px auto 20px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+}
+
+
+#spotifyPlayer iframe {
+
+    display: block;
+
+    width: 100%;
+
+}
+
+
+.musicNote {
+
+    margin-bottom: 30px;
+
+}
+
+
+.musicButtons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+
+/* =====================================
+   LETTER SCREEN
+===================================== */
+
+#letterScreen {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #f2ede4;
+
+    color: #29251f;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 1.2s ease;
+
+    overflow: hidden;
+
+}
+
+
+#letterScreen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =====================================
+   LETTER PAGE
+===================================== */
+
+#letterPage {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+}
+
+
+#letterContent {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding:
+
+        12vh
+        30px
+        80px;
+
+    scroll-behavior: smooth;
+
+}
+
+
+/* scrollbar */
+
+#letterContent::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+#letterContent::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(0,0,0,0.2);
+
+}
+
+
+/* =====================================
+   LETTER TEXT
+===================================== */
+
+#letterText {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size:
+        clamp(1.1rem, 3vw, 1.35rem);
+
+    line-height: 2;
+
+    white-space: pre-line;
+
+}
+
+
+#letterText.first {
+
+    font-size:
+        clamp(1.3rem, 4vw, 1.6rem);
+
+}
+
+
+#letterText.confession {
+
+    text-align: center;
+
+    font-size:
+        clamp(2.5rem, 9vw, 4rem);
+
+    line-height: 1.4;
+
+}
+
+
+/* =====================================
+   LETTER CONTROLS
+===================================== */
+
+#letterControls {
+
+    width: 100%;
+
+    min-height: 90px;
+
+    padding: 15px 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-top:
+        1px solid
+        rgba(0,0,0,0.1);
+
+    background:
+        rgba(242,237,228,0.95);
+
+}
+
+
+#letterControls button {
+
+    color: #29251f;
+
+    border-color:
+        rgba(41,37,31,0.35);
+
+}
+
+
+#letterControls button:hover {
+
+    background:
+        rgba(0,0,0,0.06);
+
+}
+
+
+#gateMessage {
+
+    min-width: 150px;
+
+    text-align: center;
+
+    font-size: 0.85rem;
+
+    opacity: 0.6;
+
+}
+
+
+/* =====================================
+   LOCKED BUTTON
+===================================== */
+
+button.locked {
+
+    opacity: 0.25;
+
+    cursor: default;
+
+    transform: none !important;
+
+}
+
+
+button.locked:hover {
+
+    background: transparent;
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+
+    #buttons {
+
+        margin-top: 35px;
+
+    }
+
+
+    button {
+
+        padding:
+            11px 24px;
+
+    }
+
+
+    #letterContent {
+
+        padding:
+            10vh
+            22px
+            80px;
+
+    }
+
+
+    #letterControls {
+
+        min-height: 80px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    #gateMessage {
+
+        min-width: 90px;
+
+        font-size: 0.75rem;
+
+    }
+
+}
