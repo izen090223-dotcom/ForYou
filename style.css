@@ -1,0 +1,372 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #0b0b0f;
+
+    color: white;
+
+    font-family: Georgia, serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+/* =========================
+   MAIN EXPERIENCE
+========================= */
+
+#experience {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+#content {
+    width: 100%;
+    max-width: 650px;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+#title {
+    margin: 0 0 20px 0;
+
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+
+    font-weight: normal;
+}
+
+#message {
+    margin: 0;
+
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+#buttons {
+    margin-top: 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+}
+
+button {
+    padding: 13px 32px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-2px);
+}
+
+#backButton {
+    opacity: 0.5;
+}
+
+#backButton:hover {
+    opacity: 1;
+}
+
+
+/* =========================
+   FADE TRANSITION
+========================= */
+
+.fade-out {
+    opacity: 0;
+
+    transform: translateY(15px);
+}
+
+
+/* =========================
+   MUSIC SCREEN
+========================= */
+
+#musicScreen {
+
+    position: absolute;
+
+    width: 100%;
+    max-width: 650px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+}
+
+#musicScreen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+#musicScreen h2 {
+
+    margin-bottom: 15px;
+
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+
+    font-weight: normal;
+}
+
+#musicScreen p {
+
+    line-height: 1.8;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   SPOTIFY
+========================= */
+
+#spotifyPlayer {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 35px auto 20px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+#spotifyPlayer iframe {
+
+    display: block;
+
+    width: 100%;
+}
+
+
+/* =========================
+   MUSIC NOTE
+========================= */
+
+.musicNote {
+
+    font-size: 0.95rem;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   LETTER SCREEN
+========================= */
+
+#letterScreen {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    padding: 60px 25px;
+
+    background: #f4efe7;
+
+    color: #26231f;
+
+    overflow-y: auto;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 1.2s ease;
+}
+
+#letterScreen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+#letter {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 30px 0 100px;
+
+    text-align: left;
+
+    font-size: clamp(1.05rem, 3vw, 1.25rem);
+
+    line-height: 2;
+}
+
+#letter p {
+
+    margin: 0 0 35px;
+}
+
+.letterGreeting {
+
+    font-size: 1.5rem;
+
+    margin-bottom: 50px !important;
+}
+
+.confession {
+
+    text-align: center;
+
+    font-size: clamp(2rem, 8vw, 3.5rem);
+
+    margin: 80px 0 !important;
+
+    font-family: Georgia, serif;
+}
+
+.letterEnding {
+
+    margin-top: 80px !important;
+}
+
+.signature {
+
+    text-align: right;
+
+    font-style: italic;
+
+    margin-top: 60px !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #experience {
+        padding: 20px;
+    }
+
+    #content {
+        max-width: 90%;
+    }
+
+    #buttons {
+        margin-top: 35px;
+    }
+
+    button {
+        padding: 11px 24px;
+    }
+
+    #musicScreen {
+        padding: 25px;
+    }
+
+    #letterScreen {
+        padding: 45px 20px;
+    }
+
+    #letter {
+        line-height: 1.9;
+    }
+}
