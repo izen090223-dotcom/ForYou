@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>For You</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <main id="app">
+
+        <!-- =====================================
+             INTRO / STORY
+        ====================================== -->
+
+        <section id="storyScreen" class="screen active">
+
+            <div class="storyContent">
+
+                <div id="pageNumber"></div>
+
+                <h1 id="storyTitle"></h1>
+
+                <p id="storyMessage"></p>
+
+
+                <!-- MEMORY -->
+
+                <div
+                    id="memoryContainer"
+                    class="hidden"
+                >
+
+                    <div
+                        id="memoryPlaceholder"
+                    >
+                        Your photo goes here.
+                    </div>
+
+                    <img
+                        id="memoryImage"
+                        src=""
+                        alt="A memory"
+                    >
+
+                    <p id="memoryCaption"></p>
+
+                </div>
+
+
+                <!-- THREE CARDS -->
+
+                <div
+                    id="memoryCards"
+                    class="hidden"
+                >
+
+                    <button
+                        class="memoryCard"
+                        data-card="0"
+                    >
+                        <span>01</span>
+                        <strong>
+                            Something I remember
+                        </strong>
+                    </button>
+
+
+                    <button
+                        class="memoryCard"
+                        data-card="1"
+                    >
+                        <span>02</span>
+                        <strong>
+                            Something I noticed
+                        </strong>
+                    </button>
+
+
+                    <button
+                        class="memoryCard"
+                        data-card="2"
+                    >
+                        <span>03</span>
+                        <strong>
+                            Something I felt
+                        </strong>
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="cardReveal"
+                    class="hidden"
+                ></div>
+
+
+                <!-- SECRET -->
+
+                <div
+                    id="secretArea"
+                    class="hidden"
+                >
+
+                    <button id="secretButton">
+                        look closer
+                    </button>
+
+                    <p id="secretText"></p>
+
+                </div>
+
+
+                <!-- STORY BUTTONS -->
+
+                <div id="storyButtons">
+
+                    <button id="storyBack">
+                        Back
+                    </button>
+
+                    <button id="storyNext">
+                        Begin
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MUSIC
+        ====================================== -->
+
+        <section
+            id="musicScreen"
+            class="screen"
+        >
+
+            <div class="musicContent">
+
+                <p class="label">
+                    ONE LAST THING
+                </p>
+
+                <h2>
+                    Before you continue...
+                </h2>
+
+                <p>
+                    I picked something for you.
+                </p>
+
+
+                <!--
+                    SPOTIFY
+
+                    Replace this iframe later with
+                    your own Spotify embed.
+                -->
+
+                <div id="spotifyContainer">
+
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5pFDMFxpp2tMyR24SjVq2W?utm_source=generator&si=dda35d746ac54f0d" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </iframe>
+
+                </div>
+
+
+                <p class="musicNote">
+                    You can listen while you read,
+                    if you'd like.
+                </p>
+
+
+                <div class="musicButtons">
+
+                    <button id="musicBack">
+                        Back
+                    </button>
+
+                    <button id="readLetter">
+                        Read my letter
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LETTER
+        ====================================== -->
+
+        <section id="letterScreen">
+
+            <div id="letterScroll">
+
+                <div id="letterInner">
+
+                    <div id="letterLabel">
+                        MY LETTER
+                    </div>
+
+                    <div id="letterText"></div>
+
+                </div>
+
+
+                <!--
+                    IMPORTANT:
+
+                    This is INSIDE the scrolling
+                    area.
+
+                    Therefore on scroll pages,
+                    she literally cannot see
+                    Continue until she reaches
+                    the bottom.
+                -->
+
+                <div id="letterControls">
+
+                    <button id="letterBack">
+                        Back
+                    </button>
+
+                    <span id="gateMessage"></span>
+
+                    <button id="letterNext">
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
