@@ -1,0 +1,887 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+body {
+
+    background: #09090c;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   EXPERIENCE
+========================================= */
+
+#experience {
+
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+}
+
+
+/* =========================================
+   SCREENS
+========================================= */
+
+.screen {
+
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+
+}
+
+
+.screen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   STORY BACKGROUND
+========================================= */
+
+#storyScreen {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(100, 90, 120, 0.18),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            #16161c,
+            #07070a 75%
+        );
+
+}
+
+
+/* =========================================
+   STORY CONTENT
+========================================= */
+
+.content {
+
+    width: 90%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+.content.fade-out {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+}
+
+
+/* =========================================
+   PAGE NUMBER
+========================================= */
+
+#pageNumber {
+
+    min-height: 20px;
+
+    margin-bottom: 20px;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 4px;
+
+    opacity: 0.3;
+
+}
+
+
+/* =========================================
+   STORY TEXT
+========================================= */
+
+#title {
+
+    margin: 0 0 20px;
+
+    font-size:
+        clamp(2.7rem, 8vw, 5rem);
+
+    font-weight: normal;
+
+    letter-spacing: -1px;
+
+}
+
+
+#message {
+
+    margin: 0 auto;
+
+    max-width: 600px;
+
+    font-size:
+        clamp(1.1rem, 3vw, 1.4rem);
+
+    line-height: 2;
+
+    opacity: 0.75;
+
+    white-space: pre-line;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+#buttons {
+
+    margin-top: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+button {
+
+    padding: 13px 30px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.35);
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+
+        background 0.3s ease,
+
+        transform 0.3s ease,
+
+        opacity 0.3s ease;
+
+}
+
+
+button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+#backButton {
+
+    opacity: 0.45;
+
+}
+
+
+#backButton:hover {
+
+    opacity: 1;
+
+}
+
+
+/* =========================================
+   MEMORY IMAGE
+========================================= */
+
+#memoryContainer {
+
+    display: none;
+
+    margin: 40px auto 10px;
+
+    max-width: 550px;
+
+}
+
+
+#memoryPlaceholder {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.03);
+
+    color: rgba(255,255,255,0.35);
+
+    font-size: 0.9rem;
+
+}
+
+
+#memoryImage {
+
+    display: none;
+
+    width: 100%;
+
+    max-height: 55vh;
+
+    object-fit: cover;
+
+}
+
+
+#memoryCaption {
+
+    margin-top: 15px;
+
+    font-style: italic;
+
+    font-size: 0.95rem;
+
+    opacity: 0.55;
+
+}
+
+
+/* =========================================
+   MEMORY CARDS
+========================================= */
+
+#memoryCards {
+
+    display: none;
+
+    margin: 40px auto 0;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    gap: 12px;
+
+}
+
+
+.memoryCard {
+
+    width: 100%;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.memoryCard span {
+
+    opacity: 0.4;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+}
+
+
+.memoryCard strong {
+
+    font-weight: normal;
+
+}
+
+
+/* =========================================
+   CARD REVEAL
+========================================= */
+
+#cardReveal {
+
+    display: none;
+
+    margin: 25px auto 0;
+
+    max-width: 550px;
+
+    line-height: 1.9;
+
+    opacity: 0.75;
+
+    animation: fadeIn 0.8s ease;
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   SECRET
+========================================= */
+
+#secretArea {
+
+    display: none;
+
+    margin-top: 35px;
+
+}
+
+
+#secretButton {
+
+    border: none;
+
+    font-size: 0.8rem;
+
+    opacity: 0.3;
+
+}
+
+
+#secretButton:hover {
+
+    opacity: 0.8;
+
+    background: transparent;
+
+}
+
+
+#secretText {
+
+    max-width: 500px;
+
+    margin: 20px auto 0;
+
+    line-height: 2;
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+
+}
+
+
+#secretText.visible {
+
+    opacity: 0.8;
+
+}
+
+
+/* =========================================
+   MUSIC SCREEN
+========================================= */
+
+#musicScreen {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #18151c,
+            #07070a 75%
+        );
+
+}
+
+
+.musicContent {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    text-align: center;
+
+}
+
+
+.smallLabel {
+
+    font-size: 0.7rem !important;
+
+    letter-spacing: 4px;
+
+    opacity: 0.35 !important;
+
+}
+
+
+.musicContent h2 {
+
+    margin: 20px 0 15px;
+
+    font-size:
+        clamp(2rem, 6vw, 3rem);
+
+    font-weight: normal;
+
+}
+
+
+.musicContent > p {
+
+    line-height: 1.8;
+
+    opacity: 0.7;
+
+}
+
+
+#spotifyPlayer {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 35px auto 20px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+}
+
+
+#spotifyPlayer iframe {
+
+    display: block;
+
+    width: 100%;
+
+}
+
+
+.musicNote {
+
+    font-size: 0.95rem;
+
+    margin-bottom: 30px;
+
+}
+
+
+.musicButtons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+#letterScreen {
+
+    background: #f2ede4;
+
+    color: #29251f;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+}
+
+
+#letterScreen.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+#letterPage {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+}
+
+
+/* =========================================
+   LETTER CONTENT
+========================================= */
+
+#letterContent {
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding:
+        12vh
+        30px
+        120px;
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+
+#letterContent::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+#letterContent::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(0,0,0,0.18);
+
+}
+
+
+#letterTopLabel {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 5px;
+
+    opacity: 0.35;
+
+}
+
+
+#letterText {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size:
+        clamp(1.1rem, 3vw, 1.35rem);
+
+    line-height: 2;
+
+    white-space: pre-line;
+
+    animation: letterAppear 1s ease;
+
+}
+
+
+@keyframes letterAppear {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   CONFESSION
+========================================= */
+
+#letterText.confession {
+
+    min-height: 60vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    font-size:
+        clamp(2.8rem, 10vw, 5rem);
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================
+   LETTER CONTROLS
+========================================= */
+
+#letterControls {
+
+    width: 100%;
+
+    min-height: 90px;
+
+    padding: 15px 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-top:
+        1px solid
+        rgba(0,0,0,0.1);
+
+    background:
+        rgba(242,237,228,0.96);
+
+}
+
+
+#letterControls button {
+
+    color: #29251f;
+
+    border-color:
+        rgba(41,37,31,0.3);
+
+}
+
+
+#letterControls button:hover {
+
+    background:
+        rgba(0,0,0,0.06);
+
+}
+
+
+#gateMessage {
+
+    min-width: 150px;
+
+    text-align: center;
+
+    font-size: 0.8rem;
+
+    opacity: 0.55;
+
+}
+
+
+/* =========================================
+   LOCKED BUTTON
+========================================= */
+
+button.locked {
+
+    opacity: 0.25;
+
+    cursor: not-allowed;
+
+    transform: none !important;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #buttons {
+
+        margin-top: 35px;
+
+    }
+
+
+    button {
+
+        padding:
+            11px 23px;
+
+    }
+
+
+    #letterContent {
+
+        padding:
+            10vh
+            22px
+            120px;
+
+    }
+
+
+    #letterControls {
+
+        min-height: 80px;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    #gateMessage {
+
+        min-width: 90px;
+
+        font-size: 0.7rem;
+
+    }
+
+
+    .memoryCard {
+
+        padding: 17px;
+
+    }
+
+}

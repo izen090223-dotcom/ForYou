@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>For You</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <main id="experience">
+
+
+        <!-- =========================================
+             STORY / OPENING
+        ========================================== -->
+
+        <section id="storyScreen" class="screen active">
+
+            <div id="storyContent" class="content">
+
+                <div id="pageNumber"></div>
+
+                <h1 id="title">
+                    For you.
+                </h1>
+
+                <p id="message">
+                    Whenever you're ready.
+                </p>
+
+
+                <!-- MEMORY IMAGE -->
+
+                <div id="memoryContainer">
+
+                    <div id="memoryPlaceholder">
+                        Your memory goes here.
+                    </div>
+
+                    <img
+                        id="memoryImage"
+                        src=""
+                        alt="A memory"
+                    >
+
+                    <p id="memoryCaption"></p>
+
+                </div>
+
+
+                <!-- MEMORY CARDS -->
+
+                <div id="memoryCards">
+
+                    <button
+                        class="memoryCard"
+                        data-card="0"
+                    >
+                        <span>01</span>
+                        <strong>Something I remember</strong>
+                    </button>
+
+                    <button
+                        class="memoryCard"
+                        data-card="1"
+                    >
+                        <span>02</span>
+                        <strong>Something I noticed</strong>
+                    </button>
+
+                    <button
+                        class="memoryCard"
+                        data-card="2"
+                    >
+                        <span>03</span>
+                        <strong>Something I felt</strong>
+                    </button>
+
+                </div>
+
+
+                <!-- CARD REVEAL -->
+
+                <div id="cardReveal"></div>
+
+
+                <!-- SECRET -->
+
+                <div id="secretArea">
+
+                    <button id="secretButton">
+                        look closer
+                    </button>
+
+                    <p id="secretText"></p>
+
+                </div>
+
+
+                <!-- NORMAL BUTTONS -->
+
+                <div id="buttons">
+
+                    <button id="backButton">
+                        Back
+                    </button>
+
+                    <button id="nextButton">
+                        Begin
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             MUSIC
+        ========================================== -->
+
+        <section id="musicScreen" class="screen">
+
+            <div class="musicContent">
+
+                <p class="smallLabel">
+                    ONE LAST THING
+                </p>
+
+                <h2>
+                    Before you continue...
+                </h2>
+
+                <p>
+                    I picked something for you.
+                </p>
+
+
+                <div id="spotifyPlayer">
+
+                    <!--
+                        REPLACE THIS IFRAME WITH
+                        YOUR SPOTIFY EMBED.
+
+                        Spotify:
+                        Song → Share → Embed → Copy
+                    -->
+
+                    <iframe
+                        src="https://open.spotify.com/embed/track/4ZtFanR9U6ndgddUvNcjcG"
+                        width="100%"
+                        height="152"
+                        frameborder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
+
+                <p class="musicNote">
+                    You can listen while you read,
+                    if you'd like.
+                </p>
+
+
+                <div class="musicButtons">
+
+                    <button id="musicBackButton">
+                        Back
+                    </button>
+
+                    <button id="letterButton">
+                        Read my letter
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LETTER
+        ========================================== -->
+
+        <section id="letterScreen">
+
+            <div id="letterPage">
+
+
+                <!-- LETTER CONTENT -->
+
+                <div id="letterContent">
+
+                    <div id="letterTopLabel">
+                        MY LETTER
+                    </div>
+
+                    <div id="letterText"></div>
+
+                </div>
+
+
+                <!-- LETTER CONTROLS -->
+
+                <div id="letterControls">
+
+                    <button id="letterBack">
+                        Back
+                    </button>
+
+                    <div id="gateMessage"></div>
+
+                    <button id="letterNext">
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
