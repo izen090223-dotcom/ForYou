@@ -19,28 +19,97 @@
 
 <body>
 
-
-    <!-- =====================================
-         MAIN EXPERIENCE
-    ====================================== -->
-
     <main id="experience">
 
 
-        <!-- =================================
-             STORY
-        ================================== -->
+        <!-- =========================================
+             STORY / OPENING
+        ========================================== -->
 
         <section id="storyScreen" class="screen active">
 
             <div id="storyContent" class="content">
 
-                <h1 id="title">For you.</h1>
+                <div id="pageNumber"></div>
+
+                <h1 id="title">
+                    For you.
+                </h1>
 
                 <p id="message">
                     Whenever you're ready.
                 </p>
 
+
+                <!-- MEMORY IMAGE -->
+
+                <div id="memoryContainer">
+
+                    <div id="memoryPlaceholder">
+                        Your memory goes here.
+                    </div>
+
+                    <img
+                        id="memoryImage"
+                        src=""
+                        alt="A memory"
+                    >
+
+                    <p id="memoryCaption"></p>
+
+                </div>
+
+
+                <!-- MEMORY CARDS -->
+
+                <div id="memoryCards">
+
+                    <button
+                        class="memoryCard"
+                        data-card="0"
+                    >
+                        <span>01</span>
+                        <strong>Something I remember</strong>
+                    </button>
+
+                    <button
+                        class="memoryCard"
+                        data-card="1"
+                    >
+                        <span>02</span>
+                        <strong>Something I noticed</strong>
+                    </button>
+
+                    <button
+                        class="memoryCard"
+                        data-card="2"
+                    >
+                        <span>03</span>
+                        <strong>Something I felt</strong>
+                    </button>
+
+                </div>
+
+
+                <!-- CARD REVEAL -->
+
+                <div id="cardReveal"></div>
+
+
+                <!-- SECRET -->
+
+                <div id="secretArea">
+
+                    <button id="secretButton">
+                        look closer
+                    </button>
+
+                    <p id="secretText"></p>
+
+                </div>
+
+
+                <!-- NORMAL BUTTONS -->
 
                 <div id="buttons">
 
@@ -60,13 +129,17 @@
 
 
 
-        <!-- =================================
+        <!-- =========================================
              MUSIC
-        ================================== -->
+        ========================================== -->
 
         <section id="musicScreen" class="screen">
 
             <div class="musicContent">
+
+                <p class="smallLabel">
+                    ONE LAST THING
+                </p>
 
                 <h2>
                     Before you continue...
@@ -77,11 +150,24 @@
                 </p>
 
 
-                <!-- Spotify -->
-
                 <div id="spotifyPlayer">
 
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5pFDMFxpp2tMyR24SjVq2W?utm_source=generator&si=1aa79fe1928246e3" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <!--
+                        REPLACE THIS IFRAME WITH
+                        YOUR SPOTIFY EMBED.
+
+                        Spotify:
+                        Song → Share → Embed → Copy
+                    -->
+
+                    <iframe
+                        src="https://open.spotify.com/embed/track/4ZtFanR9U6ndgddUvNcjcG"
+                        width="100%"
+                        height="152"
+                        frameborder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                    </iframe>
 
                 </div>
 
@@ -110,20 +196,29 @@
 
 
 
-        <!-- =================================
+        <!-- =========================================
              LETTER
-        ================================== -->
+        ========================================== -->
 
         <section id="letterScreen">
 
             <div id="letterPage">
 
+
+                <!-- LETTER CONTENT -->
+
                 <div id="letterContent">
 
-                    <p id="letterText"></p>
+                    <div id="letterTopLabel">
+                        MY LETTER
+                    </div>
+
+                    <div id="letterText"></div>
 
                 </div>
 
+
+                <!-- LETTER CONTROLS -->
 
                 <div id="letterControls">
 
@@ -142,7 +237,6 @@
             </div>
 
         </section>
-
 
 
     </main>
